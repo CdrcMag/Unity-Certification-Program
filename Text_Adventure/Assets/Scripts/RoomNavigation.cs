@@ -6,6 +6,9 @@ public class RoomNavigation : MonoBehaviour
 {
     public Room currentRoom;
 
+    //Dictionnaire des sorties de pièces
+    Dictionary<string, Room> exitDictionary = new Dictionary<string, Room>();
+
     private GameController controller;
 
     private void Awake()
@@ -16,8 +19,32 @@ public class RoomNavigation : MonoBehaviour
     public void UnpackExitsInRoom()
     {
         for (int i = 0; i < currentRoom.exits.Length; i++)
-        {
+        { 
+            exitDictionary.Add(currentRoom.exits[i].keyString, currentRoom.exits[i].valueRoom);
             controller.InteractionDescriptionRooms.Add(currentRoom.exits[i].exitDescription);
         }
     }
+
+    void AttempsToChangeRooms(string directionNoun)
+    {
+        if (exitDictionary.ContainsKey(directionNoun))
+        {
+            currentRoom = exitDictionary[directionNoun];
+            controller.logStringWithReturn("You head off to the " + directionNoun);
+            controller.DisplayRoomText();
+
+        }
+        else
+        {
+            controller.logStringWithReturn("There is no path to the " + directionNoun);
+        }
+    }
+
+    public void ClearExits()
+    {
+        exitDictionary.Clear();
+    }
+
+
+
 }

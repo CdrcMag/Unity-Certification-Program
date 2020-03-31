@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
     //Rajoute la description de la current room dans le text
     public void DisplayRoomText()
     {
+        ClearCollectionOfNewRoom();
+
         UnpackRoom();
 
         string joinedInteractionDescriptions = string.Join("\n", InteractionDescriptionRooms.ToArray());
@@ -62,6 +64,14 @@ public class GameController : MonoBehaviour
 
         displayText.text = logAsText;
     }
+
+    void ClearCollectionOfNewRoom()
+    {
+        InteractionDescriptionRooms.Clear();
+        roomNavigation.ClearExits();
+    }
+
+
 
     private void UnpackRoom()
     {
