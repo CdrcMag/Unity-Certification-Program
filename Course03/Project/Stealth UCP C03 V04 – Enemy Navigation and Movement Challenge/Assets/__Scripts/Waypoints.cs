@@ -10,18 +10,10 @@ public class Waypoints : MonoBehaviour
     [Header("Time spent not moving when position reached")]
     public int Waypoint_SecondsToWaitAt;
 
-    [HideInInspector]
-    public Vector3 Waypoint_Position;
-    [HideInInspector]
-    public Vector3 Waypoint_Rotation;
-
 
 
     private void Awake()
     {
-        Waypoint_Position = transform.position;
-        Waypoint_Rotation = transform.rotation.eulerAngles;
-
         DeactivateVisuals();
 
     }
