@@ -14,7 +14,7 @@ https://github.com/CdrcMag/Unity-Certification-Program/tree/Course03/Course03/Pr
 - Unity Learn / FPS
 https://github.com/CdrcMag/Unity-Certification-Program/tree/FPS-Learning
 
-- Unity Learn / FPS
+- Unity Learn / Roll A Ball
 https://github.com/CdrcMag/Unity-Certification-Program/tree/Roll-A-Ball
 
 - Unity Learn / Text Adventure
