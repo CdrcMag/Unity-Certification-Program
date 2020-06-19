@@ -16,7 +16,7 @@ public class EnemyNav : MonoBehaviour
 
     [Header("Dynamic")]
     [SerializeField]
-    private eMode           _mode = eMode.wait;
+    public eMode           _mode = eMode.wait;
     public int              wpNum = 0;
     public float            pathTime;
     public float            waitUntil;
