@@ -37,16 +37,12 @@ public class ACS17AnimationManager : MonoBehaviour
             
             ChangeAnimation();
             mode = enemyNav._mode;
-
-            
-
         }
 
         Rotation();
-
-
-
+        
     }
+
 
     void Rotation()
     {
